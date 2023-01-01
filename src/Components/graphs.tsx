@@ -55,7 +55,7 @@ function graphs(username: any) {
   const [tags, settags] = useState([]);
   const [levels, setlevels] = useState([]);
   const [ratings, setratings] = useState([]);
-  
+
 
   useEffect(() => {
     const api = async () => {
@@ -66,6 +66,7 @@ function graphs(username: any) {
 
       const res = await data.json();
       Setusers(res.result);
+      
       let resultLength = res.result.length;
 
       let programmingLanguages = [""];
@@ -279,13 +280,13 @@ function graphs(username: any) {
                 dataKey="value"
                 fill="#8884d8"
                 background={{ fill: "#eee" }}
-              />
+              />  
             </BarChart>
           </div>
         </div>
       </div>
       <Tables username={username.username} />
-      <Unsolved/>
+      
     </div>
     
       </>

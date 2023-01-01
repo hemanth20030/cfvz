@@ -7,7 +7,7 @@ import Axios from "axios";
 import Paticles from "./Components/Paticles";
 import Typewriter from 'typewriter-effect';
 import Navbar from "./Components/navbar";
-import Tables from "./Components/tables";
+import Saysomething from "./Components/saysomething";
 import Graphss from "./Components/graphs";
 import History from "./Components/History";
 import Discussion from "./Components/saysomething";
@@ -87,6 +87,8 @@ function App() {
 
                 
               </div></>}/>
+              <Route path="/saysomething" element={<><Saysomething/></>}/>
+
             <Route path="/contestdetails" element={<><History username={username}/></>}/>
             <Route path="/discussion" element={
            <Discussion/>
