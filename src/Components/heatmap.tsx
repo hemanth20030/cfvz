@@ -5,7 +5,7 @@ import React from 'react'
 function heatmap() {
   return (
     <div>
-      
+      <h1>HeatMap</h1>
     </div>
   )
 }
