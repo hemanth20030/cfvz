@@ -52,6 +52,7 @@ export default function History(username:any) {
                     <th scope="col">ContestName</th>
                     <th scope="col">OldRating</th>
                     <th scope="col">NewRating</th>
+                    <th scope ="col">Change</th>
                     <th scope="col">Rank</th>
                   </tr>
                 </thead>
@@ -64,16 +65,18 @@ export default function History(username:any) {
           {
             
          
-      users.map((currentElementofApi : any, index) => {
+      users?.map((currentElementofApi : any, index) => {
           
           return (
-
+            
               <tr>
                 <td>{index+1}</td>
               
                 <td style={{color:'#3C2A21'}}>{currentElementofApi.contestName}</td>
                 <td style={{color:'red'}}>{currentElementofApi.oldRating}</td>
                 <td style={{color:'green'}}>{currentElementofApi.newRating}</td>
+                
+                <td style={{color:'black'}}>{currentElementofApi.newRating-currentElementofApi.oldRating}</td>
                 <td style={{color:'blue'}}>{currentElementofApi.rank}</td>
               </tr>
                 

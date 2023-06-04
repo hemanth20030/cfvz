@@ -123,15 +123,15 @@ function graphs(username: any) {
 
   return (
     <>
-    <div className="my-5" style={{ backgroundColor: "#f5f5f5" }}>
+    <div className="my-5" style={{ backgroundColor: "white" }}>
       <div className="container">
-        <div className="row">
+        <div className="row" style={{marginTop:'15%',marginLeft:'55px'}}>
           <div
             className="col-sm"
-            style={{ backgroundColor: "white", marginTop: "5%" }}
+            style={{ backgroundColor: "white" }}
           >
             <h4>
-              <b>Verdicts of {username.username}</b>
+              <b>Languages of {username.username}</b>
             </h4>
             <PieChart width={600} height={600}>
               <Pie
@@ -140,7 +140,7 @@ function graphs(username: any) {
                 cy={200}
                 labelLine={false}
                 label={renderCustomizedLabel}
-                outerRadius={200}
+                outerRadius={150}
                 fill="#8884d8"
                 dataKey="value"
               >
@@ -157,10 +157,10 @@ function graphs(username: any) {
 
           <div
             className="col-sm"
-            style={{ backgroundColor: "white", marginTop: "5%" }}
+            style={{ backgroundColor: "white" }}
           >
             <h4>
-              <b>Languages of {username.username}</b>
+              <b>Verdicts of {username.username}</b>
             </h4>
             <PieChart width={600} height={600}>
               <Pie
@@ -169,7 +169,7 @@ function graphs(username: any) {
                 cy={200}
                 labelLine={false}
                 label={renderCustomizedLabel}
-                outerRadius={200}
+                outerRadius={150}
                 fill="#8884d8"
                 dataKey="value"
               >
@@ -185,7 +185,7 @@ function graphs(username: any) {
           </div>
         </div>
         <div>
-          <div className="container my-5" style={{ backgroundColor: "white" }}>
+          <div className="container my-5" style={{ backgroundColor: "white",justifyContent:'center' }}>
             <center>
               <h4>
                 <b>Tags of {username.username}</b>

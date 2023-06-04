@@ -5,11 +5,12 @@ import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer, Sector, Cell } fro
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
 import Axios from "axios";
 import Paticles from "./Components/Paticles";
+import heatmap from "./Components/heatmap";
 import Typewriter from 'typewriter-effect';
 import Navbar from "./Components/navbar";
 import Saysomething from "./Components/saysomething";
 import Graphss from "./Components/graphs";
-import History from "./Components/History";
+import History from "./Components/ContestDetails";
 import Discussion from "./Components/saysomething";
 import {
   BrowserRouter as Router,
@@ -34,12 +35,12 @@ function App() {
  
   return (
     <>
-    <h1></h1>
+    
     
     <BrowserRouter>
     <Navbar/>
     <Routes>
-      <Route path="/" element={<>
+      <Route path="/." element={<>
       <div className="container my-5" style={{textAlign:'center',color:'red'}}>
         
       <Typewriter
@@ -55,8 +56,42 @@ function App() {
        
      
       </>}/>
+      <Route path="/" element={<>
+              <div className="main" style={{marginTop:'0px'}}>
+                <div className="my-3" style={{ textAlign: "center" }}>
+                  <div className="">
+                    <form ref={formRef as any} id="formcodeforces" onSubmit={HandleSubmit}>
+                      <input
+                        type="text"
+                        name="username"
+                        id=""
+                        placeholder="Codeforces User Handle"
+                        
+                        style={{
+                          height: "200px",
+                          width: "70%",
+                          textAlign: "center",
+                        }}
+
+                      />
+
+                        <input type="submit" style={{marginLeft:'1%',color:'black'}} /> 
+                      
+                    </form>
+
+
+                  </div>
+                </div>
+                { username !== "" && <Graphss username={username} /> }
+                
+              
+
+                
+              </div>
+              
+              </>}/>
       <Route path="/home" element={<>
-              <div className="main">
+              <div className="main" style={{marginTop:'0px'}}>
                 <div className="my-3" style={{ textAlign: "center" }}>
                   <div className="">
                     <form ref={formRef as any} id="formcodeforces" onSubmit={HandleSubmit}>
@@ -92,6 +127,7 @@ function App() {
             <Route path="/contestdetails" element={<><History username={username}/></>}/>
             <Route path="/discussion" element={
            <Discussion/>
+
             }/>
     </Routes>
 
